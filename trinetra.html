@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRINETRA ATTIRES | Direct Apparel Manufacturers &amp; B2B Wholesale Only</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        couture: {
+                            ivory: '#FAF7F2',
+                            alabaster: '#F3EDE2',
+                            sand: '#E8DFD1',
+                            navy: '#121E2D',
+                            navyLight: '#1A283A',
+                            gold: '#B5945B',
+                            champagne: '#D4B475',
+                            goldDark: '#8E6F3B',
+                            taupe: '#7A624B',
+                            ink: '#1A2028',
+                            muted: '#525B65'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Editorial Cormorant Garamond & Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+
+        /* Warm Silk Ivory Canvas with Subtle Editorial Texture */
+        .warm-canvas {
+            background-color: #FAF7F2;
+            background-image:
+                radial-gradient(rgba(18, 30, 45, 0.03) 1px, transparent 0),
+                radial-gradient(rgba(181, 148, 91, 0.04) 1px, transparent 0);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+        }
+
+        /* Burnished Antique Gold Foil Gradient */
+        .gold-foil-text {
+            background: linear-gradient(135deg, #8E6F3B 0%, #D4B475 48%, #B5945B 75%, #8E6F3B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Architectural Arch Frame */
+        .runway-arch {
+            border-radius: 220px 220px 24px 24px;
+            border: 1px solid rgba(181, 148, 91, 0.45);
+            box-shadow: 0 30px 65px -15px rgba(18, 30, 45, 0.15);
+        }
+
+        /* Collection Card Styling */
+        .collection-card {
+            border: 1px solid rgba(181, 148, 91, 0.35);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .collection-card:hover {
+            border-color: #B5945B;
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -12px rgba(18, 30, 45, 0.14);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F3EDE2; }
+        ::-webkit-scrollbar-thumb { background: #B5945B; border-radius: 4px; }
+    </style>
+</head>
+<body class="warm-canvas text-couture-ink font-sans antialiased selection:bg-couture-navy selection:text-couture-ivory pb-20 sm:pb-0"
+      x-data="{
+          mobileMenuOpen: false,
+          logoError: false,
+          enquirySubmitted: false,
+          fullName: '',
+          businessName: '',
+          phoneNumber: '+91 '
+      }"
+      x-init="$nextTick(() => { if (window.lucide) lucide.createIcons(); })">
+
+    <!-- 1. TOP ANNOUNCEMENT BAR -->
+    <div class="bg-couture-navy text-couture-ivory px-4 py-2.5 text-xs font-semibold tracking-wide text-center border-b border-couture-gold/40">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span class="text-couture-champagne inline-flex items-center gap-1.5">
+                <i data-lucide="factory" class="w-3.5 h-3.5 text-couture-champagne"></i>
+                Direct Manufacturers
+            </span>
+            <span class="text-couture-gold/60">&bull;</span>
+            <span class="font-bold uppercase tracking-wider">B2B Wholesale Only (No Retail Sales)</span>
+            <span class="text-couture-gold/60 hidden sm:inline">&bull;</span>
+            <span class="text-couture-champagne">45-Day Easy Exchange Policy</span>
+        </div>
+    </div>
+
+    <!-- STICKY HEADER NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-couture-ivory/95 backdrop-blur-md border-b border-couture-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+            
+            <!-- OFFICIAL LOGO & BRAND LOCKUP -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="relative flex items-center justify-center">
+                    <img x-show="!logoError"
+                         src="WhatsApp_Image_2026-11-13_at_9.24.08_PM-removebg-preview_3.png"
+                         alt="TRINETRA ATTIRES Official Logo"
+                         @error="logoError = true"
+                         class="h-14 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <!-- Divine Eye & Gown SVG Fallback -->
+                    <div x-show="logoError" x-cloak class="flex items-center">
+                        <svg class="w-12 h-14 sm:w-14 sm:h-16" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M46 16C53 9 67 9 74 16C67 23 53 23 46 16Z" stroke="#121E2D" stroke-width="2.6" stroke-linejoin="round"/>
+                            <circle cx="60" cy="16" r="3.4" fill="#B5945B"/>
+                            <path d="M34 28L60 37L86 28L76 53L60 62L44 53L34 28Z" stroke="#121E2D" stroke-width="2.6" stroke-linejoin="round"/>
+                            <path d="M47 41C51 38.5 55 41.5 55 44C52.5 46.5 48.5 45.5 47 41Z" stroke="#B5945B" stroke-width="2.2"/>
+                            <circle cx="51" cy="42.5" r="1.3" fill="#121E2D"/>
+                            <path d="M73 41C69 38.5 65 41.5 65 44C67.5 46.5 71.5 45.5 73 41Z" stroke="#B5945B" stroke-width="2.2"/>
+                            <circle cx="69" cy="42.5" r="1.3" fill="#121E2D"/>
+                            <path d="M60 47C57 50 57 54 60 57C63 54 63 50 60 47Z" stroke="#B5945B" stroke-width="2"/>
+                            <path d="M44 53C33 76 18 92 15 103C28 116 44 126 60 128C76 126 92 116 105 103C102 92 87 76 76 53" stroke="#121E2D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M60 62C53 86 38 106 27 114" stroke="#B5945B" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M60 62C67 86 82 106 93 114" stroke="#B5945B" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M51 74C43 90 32 98 21 98" stroke="#121E2D" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M69 74C77 90 88 98 99 98" stroke="#121E2D" stroke-width="2.2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="border-l border-couture-gold/45 pl-3.5">
+                    <span class="block font-serif text-lg sm:text-2xl font-bold tracking-[0.15em] text-couture-navy leading-none">
+                        TRINETRA ATTIRES
+                    </span>
+                    <span class="block text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-couture-goldDark font-bold mt-1">
+                        Direct Manufacturers &bull; B2B Wholesale Only
+                    </span>
+                </div>
+            </a>
+
+            <!-- DESKTOP MENU -->
+            <nav class="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-[0.14em] text-couture-navy">
+                <a href="#why-us" class="hover:text-couture-gold transition-colors">Why Partner Us</a>
+                <a href="#collections" class="hover:text-couture-gold transition-colors">Collections</a>
+                <a href="#exchange-policy" class="text-couture-goldDark hover:text-couture-navy transition-colors">45-Day Exchange</a>
+                <a href="#enquiry" class="hover:text-couture-gold transition-colors">Catalog Enquiry</a>
+            </nav>
+
+            <!-- DESKTOP ACTIONS -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="tel:+919347228061"
+                   class="px-4 py-2.5 rounded-full bg-white border border-couture-gold text-couture-navy hover:bg-couture-alabaster text-xs font-bold inline-flex items-center gap-1.5 transition-all">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-couture-goldDark"></i>
+                    <span>+91 93472 28061</span>
+                </a>
+                <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20I%20own%20a%20clothing%20shop%2Fboutique%20and%20would%20like%20to%20get%20your%20wholesale%20catalog."
+                   target="_blank"
+                   class="px-5 py-2.5 rounded-full bg-[#1C7C47] hover:bg-[#156338] text-white text-xs font-bold inline-flex items-center gap-1.5 shadow-md transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Get Catalog on WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- MOBILE MENU TOGGLE -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle Navigation" class="lg:hidden text-couture-navy p-2.5 rounded-xl hover:bg-couture-alabaster">
+                <i x-show="!mobileMenuOpen" data-lucide="menu" class="w-6 h-6"></i>
+                <i x-show="mobileMenuOpen" x-cloak data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE DROPDOWN -->
+        <div x-show="mobileMenuOpen" x-cloak x-transition class="lg:hidden bg-couture-alabaster border-b border-couture-gold/30 px-6 py-5 space-y-3.5 shadow-xl">
+            <a @click="mobileMenuOpen = false" href="#why-us" class="block text-sm font-bold text-couture-navy py-1">Why Shops &amp; Boutiques Choose Us</a>
+            <a @click="mobileMenuOpen = false" href="#collections" class="block text-sm font-bold text-couture-navy py-1">Our Wholesale Collections</a>
+            <a @click="mobileMenuOpen = false" href="#exchange-policy" class="block text-sm font-bold text-couture-goldDark py-1">45-Day Easy Exchange Policy</a>
+            <a @click="mobileMenuOpen = false" href="#enquiry" class="block text-sm font-bold text-couture-navy py-1">Catalog Request &amp; Enquiry</a>
+            <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-couture-gold/25">
+                <a href="tel:+919347228061" class="py-3 rounded-xl bg-white border border-couture-gold text-couture-navy text-xs font-bold text-center">
+                    Call Now
+                </a>
+                <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20please%20share%20your%20wholesale%20catalog." target="_blank" class="py-3 rounded-xl bg-[#1C7C47] text-white text-xs font-bold text-center">
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative border-b border-couture-gold/25 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- LEFT CONTENT (7 COLS) -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-couture-gold/50 text-couture-navy text-xs font-bold uppercase tracking-wider shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-couture-gold animate-pulse"></span>
+                        Direct Manufacturers &bull; B2B Wholesale Only (No Retail)
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-couture-navy leading-[1.12]">
+                        Direct Manufacturers of <span class="italic font-semibold gold-foil-text">Premium Boutique Attires</span> | Wholesale Only.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-couture-muted max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Partner directly with <strong class="text-couture-navy">Trinetra Attires</strong> for premium factory-wholesale apparel. We supply exclusively to clothing shops, showrooms, and boutiques—backed by our <strong class="text-couture-navy">45-Day Easy Exchange Policy</strong> to keep your store inventory fresh.
+                    </p>
+
+                    <!-- TRUST BADGES -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs font-bold text-couture-navy">
+                        <span class="px-3.5 py-2 rounded-xl bg-couture-alabaster border border-couture-gold/35 inline-flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-couture-goldDark"></i>
+                            Direct Manufacturer Pricing
+                        </span>
+                        <span class="px-3.5 py-2 rounded-xl bg-couture-alabaster border border-couture-gold/35 inline-flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-couture-goldDark"></i>
+                            45-Day Exchange Guarantee
+                        </span>
+                        <span class="px-3.5 py-2 rounded-xl bg-couture-alabaster border border-couture-gold/35 inline-flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-couture-goldDark"></i>
+                            Bulk Wholesale Only
+                        </span>
+                    </div>
+
+                    <!-- CTA BUTTONS -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 pt-2">
+                        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20I%20run%20a%20clothing%20shop%2Fboutique%20and%20would%20like%20to%20get%20your%20wholesale%20catalog."
+                           target="_blank"
+                           class="px-7 py-4 rounded-full bg-[#1C7C47] hover:bg-[#156338] text-white font-bold text-sm inline-flex items-center justify-center gap-2.5 shadow-lg transition-all">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>Get Catalog on WhatsApp</span>
+                        </a>
+
+                        <a href="tel:+919347228061"
+                           class="px-6 py-4 rounded-full bg-white hover:bg-couture-alabaster text-couture-navy border-2 border-couture-navy font-bold text-sm inline-flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="phone-call" class="w-4 h-4 text-couture-goldDark"></i>
+                            <span>Call: +91 93472 28061</span>
+                        </a>
+
+                        <a href="#enquiry"
+                           class="px-6 py-4 rounded-full bg-couture-navy hover:bg-couture-navyLight text-couture-ivory border border-couture-gold/60 font-bold text-sm inline-flex items-center justify-center gap-2 shadow-md transition-all">
+                            <span>Catalog Enquiry</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4 text-couture-champagne"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT ARCH SHOWCASE (5 COLS) -->
+                <div class="lg:col-span-5 relative mx-auto w-full max-w-md">
+                    <div class="runway-arch bg-gradient-to-b from-white via-couture-ivory to-couture-alabaster p-7 sm:p-9 relative">
+                        <div class="rounded-t-[180px] rounded-b-2xl border border-couture-gold/40 p-6 sm:p-8 bg-white/90 text-center space-y-4">
+                            <span class="inline-block text-[11px] uppercase tracking-[0.25em] text-couture-goldDark font-bold pt-1">
+                                Official Manufacturer Brand
+                            </span>
+
+                            <div class="py-2 flex flex-col items-center justify-center">
+                                <img x-show="!logoError"
+                                     src="WhatsApp_Image_2026-11-13_at_9.24.08_PM-removebg-preview_3.png"
+                                     alt="TRINETRA ATTIRES Crest"
+                                     class="h-44 sm:h-48 w-auto object-contain">
+                            </div>
+
+                            <div class="space-y-1 border-t border-couture-sand pt-4">
+                                <h2 class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.14em] text-couture-navy">TRINETRA ATTIRES</h2>
+                                <p class="text-xs sm:text-sm font-medium text-couture-muted">
+                                    Direct Manufacturers &bull; Wholesale Only
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FLOATING BADGE -->
+                    <div class="mt-4 sm:mt-0 sm:absolute -bottom-5 left-1/2 -translate-x-1/2 w-max max-w-full bg-couture-navy text-couture-ivory px-5 py-3 rounded-2xl border border-couture-champagne shadow-xl flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-couture-gold/20 border border-couture-champagne/50 flex items-center justify-center text-couture-champagne shrink-0">
+                            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-[11px] uppercase tracking-wider text-couture-champagne font-bold">Zero Dead-Stock Risk</p>
+                            <p class="text-xs font-bold text-white">45-Day Easy Wholesale Exchange</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHY PARTNER WITH US (FOR BOUTIQUE OWNERS) -->
+    <section id="why-us" class="py-20 bg-white border-b border-couture-gold/25">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+                <span class="text-xs uppercase tracking-[0.22em] text-couture-goldDark font-bold">Built For Clothing Shops &amp; Boutiques</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-couture-navy">Why Partner With Trinetra Attires</h2>
+                <p class="text-sm sm:text-base text-couture-muted">
+                    We empower boutique owners and apparel retailers with factory-direct pricing, high retail profit margins, and guaranteed exchange support.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-couture-ivory rounded-3xl p-7 border border-couture-gold/35 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-couture-navy text-couture-champagne flex items-center justify-center">
+                        <i data-lucide="factory" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-couture-navy">Direct Factory Pricing</h3>
+                    <p class="text-sm text-couture-muted leading-relaxed">
+                        Eliminate middlemen and distributors. Buy directly from our manufacturing units to secure maximum profit margins for your shop.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-couture-ivory rounded-3xl p-7 border border-couture-gold/35 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-couture-navy text-couture-champagne flex items-center justify-center">
+                        <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-couture-navy">45-Day Exchange Policy</h3>
+                    <p class="text-sm text-couture-muted leading-relaxed">
+                        Unsold sets? Exchange them effortlessly within <strong class="text-couture-navy">45 days</strong> for fresh designs from our latest catalog. Keep your store inventory active and moving.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-couture-ivory rounded-3xl p-7 border border-couture-gold/35 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-couture-navy text-couture-champagne flex items-center justify-center">
+                        <i data-lucide="store" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-couture-navy">Wholesale Only (No Retail)</h3>
+                    <p class="text-sm text-couture-muted leading-relaxed">
+                        We cater <strong class="text-couture-navy">strictly to retail shops, showrooms, and boutiques</strong>. We never sell single retail items to end customers, protecting your local retail pricing.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-couture-ivory rounded-3xl p-7 border border-couture-gold/35 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-couture-navy text-couture-champagne flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-couture-navy">Reliable Bulk Supply</h3>
+                    <p class="text-sm text-couture-muted leading-relaxed">
+                        Consistent manufacturing capacity, steam-pressed packaging, and standard <strong class="text-couture-navy">S, L, and XL</strong> size sets ready for immediate display.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. OUR COLLECTIONS (WHOLESALE TIERS) -->
+    <section id="collections" class="py-20 warm-canvas border-b border-couture-gold/25">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+                <span class="text-xs uppercase tracking-[0.22em] text-couture-goldDark font-bold">Wholesale Tiers &amp; Catalog</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-couture-navy">Our Wholesale Collections</h2>
+                <p class="text-sm sm:text-base text-couture-muted">
+                    Explore our tier collections crafted for high boutique turnover and luxury showroom display.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- TIER 1: ELEVATE -->
+                <div class="collection-card bg-white rounded-3xl p-8 flex flex-col justify-between">
+                    <div class="space-y-5">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3.5 py-1 rounded-full bg-couture-alabaster border border-couture-gold/40 text-couture-navy text-xs font-bold">
+                                Daily Shop Turnover
+                            </span>
+                            <span class="font-serif italic text-lg text-couture-goldDark font-bold">Tier 01</span>
+                        </div>
+
+                        <div>
+                            <h3 class="font-serif text-3xl font-bold text-couture-navy">Trinetra Elevate</h3>
+                            <p class="text-xs uppercase tracking-wider text-couture-taupe font-bold mt-1">Everyday &amp; Boutique Essentials</p>
+                        </div>
+
+                        <p class="text-sm text-couture-muted leading-relaxed">
+                            Fast-moving everyday readymade styles and contemporary sets created for high daily sales and repeat walk-in store customers.
+                        </p>
+
+                        <ul class="space-y-2.5 text-sm text-couture-ink pt-2 border-t border-couture-sand">
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-goldDark shrink-0"></i>
+                                <span>Standard S, L &amp; XL size sets</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-goldDark shrink-0"></i>
+                                <span>High retail profit margin for shopkeepers</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-goldDark shrink-0"></i>
+                                <span>Covered under 45-Day Exchange Policy</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-7">
+                        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20please%20send%20me%20the%20wholesale%20catalog%20and%20prices%20for%20TRINETRA%20ELEVATE."
+                           target="_blank"
+                           class="w-full py-3.5 px-4 rounded-xl bg-couture-ivory hover:bg-[#1C7C47] text-couture-navy hover:text-white border border-couture-navy hover:border-[#1C7C47] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Request Catalog on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TIER 2: COUTURE (MOST POPULAR) -->
+                <div class="collection-card bg-couture-navy text-couture-ivory rounded-3xl p-8 flex flex-col justify-between relative lg:-translate-y-2 border-2 border-couture-champagne shadow-2xl">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-couture-gold to-couture-champagne text-couture-navy text-[11px] font-extrabold uppercase tracking-wider shadow whitespace-nowrap">
+                        Most Popular With Boutiques
+                    </div>
+
+                    <div class="space-y-5 pt-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3.5 py-1 rounded-full bg-couture-navyLight border border-couture-champagne/45 text-couture-champagne text-xs font-bold">
+                                Festive &amp; Occasion Wear
+                            </span>
+                            <span class="font-serif italic text-lg text-couture-champagne font-bold">Tier 02</span>
+                        </div>
+
+                        <div>
+                            <h3 class="font-serif text-3xl font-bold text-white">Trinetra Couture</h3>
+                            <p class="text-xs uppercase tracking-wider text-couture-champagne font-bold mt-1">Designer Festive &amp; Celebration Wear</p>
+                        </div>
+
+                        <p class="text-sm text-couture-ivory/85 leading-relaxed">
+                            Eye-catching designer outfits crafted with fine detailing and elegant silhouettes for festive seasons, weddings, and celebration shoppers.
+                        </p>
+
+                        <ul class="space-y-2.5 text-sm text-couture-ivory/95 pt-2 border-t border-couture-gold/30">
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-champagne shrink-0"></i>
+                                <span>Standard S, L &amp; XL size sets</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-champagne shrink-0"></i>
+                                <span>Strong festive margin for retail boutiques</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-champagne shrink-0"></i>
+                                <span>Covered under 45-Day Exchange Policy</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-7">
+                        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20please%20send%20me%20the%20wholesale%20catalog%20and%20prices%20for%20TRINETRA%20COUTURE."
+                           target="_blank"
+                           class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-couture-gold to-couture-champagne hover:opacity-95 text-couture-navy font-extrabold text-xs uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Request Catalog on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TIER 3: RUDRA (SIGNATURE) -->
+                <div class="collection-card bg-white rounded-3xl p-8 flex flex-col justify-between">
+                    <div class="space-y-5">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3.5 py-1 rounded-full bg-couture-alabaster border border-couture-gold/40 text-couture-navy text-xs font-bold">
+                                Luxury Showroom Tier
+                            </span>
+                            <span class="font-serif italic text-lg text-couture-goldDark font-bold">Tier 03</span>
+                        </div>
+
+                        <div>
+                            <h3 class="font-serif text-3xl font-bold text-couture-navy">Rudra</h3>
+                            <p class="text-xs uppercase tracking-wider text-couture-taupe font-bold mt-1">Signature Statement Collection</p>
+                        </div>
+
+                        <p class="text-sm text-couture-muted leading-relaxed">
+                            Our highest-tier statement collection featuring rich craftsmanship and grand designs tailored for luxury showrooms and flagship boutiques.
+                        </p>
+
+                        <ul class="space-y-2.5 text-sm text-couture-ink pt-2 border-t border-couture-sand">
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-goldDark shrink-0"></i>
+                                <span>Limited-edition showroom designs</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-goldDark shrink-0"></i>
+                                <span>Premium luxury pricing &amp; high margins</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i data-lucide="check" class="w-4 h-4 text-couture-goldDark shrink-0"></i>
+                                <span>Covered under 45-Day Exchange Policy</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-7">
+                        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20please%20send%20me%20the%20wholesale%20catalog%20and%20prices%20for%20RUDRA%20(Signature%20Collection)."
+                           target="_blank"
+                           class="w-full py-3.5 px-4 rounded-xl bg-couture-ivory hover:bg-[#1C7C47] text-couture-navy hover:text-white border border-couture-navy hover:border-[#1C7C47] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Request Catalog on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 45-DAY EXCHANGE POLICY SECTION -->
+    <section id="exchange-policy" class="py-20 bg-couture-navy text-couture-ivory border-b border-couture-gold/45">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-couture-navyLight border border-couture-champagne/50 text-couture-champagne text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    100% Risk-Free Buying For Your Shop
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">45-Day Easy Exchange Policy</h2>
+                <p class="text-base sm:text-lg text-couture-ivory/85 leading-relaxed">
+                    Stock with complete confidence. If any wholesale set does not move in your store, <strong class="text-couture-champagne">exchange it within 45 days</strong> for new designs from our latest catalog.
+                </p>
+            </div>
+
+            <!-- 3 SIMPLE STEPS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-couture-navyLight p-8 rounded-3xl border border-couture-gold/40 space-y-3 relative">
+                    <span class="inline-block px-3 py-1 rounded-full bg-couture-champagne text-couture-navy text-xs font-extrabold uppercase">Step 1</span>
+                    <h3 class="font-serif text-2xl font-bold text-white">Order Wholesale Sets</h3>
+                    <p class="text-sm text-couture-ivory/80 leading-relaxed">
+                        Pick your favorite designs from our WhatsApp catalog and place your wholesale order at direct manufacturer prices.
+                    </p>
+                </div>
+
+                <div class="bg-couture-navyLight p-8 rounded-3xl border border-couture-gold/40 space-y-3 relative">
+                    <span class="inline-block px-3 py-1 rounded-full bg-couture-champagne text-couture-navy text-xs font-extrabold uppercase">Step 2</span>
+                    <h3 class="font-serif text-2xl font-bold text-white">Display In Your Shop</h3>
+                    <p class="text-sm text-couture-ivory/80 leading-relaxed">
+                        Showcase the readymade sets in your boutique or showroom and sell at strong retail profit margins.
+                    </p>
+                </div>
+
+                <div class="bg-couture-navyLight p-8 rounded-3xl border border-couture-champagne/70 space-y-3 relative">
+                    <span class="inline-block px-3 py-1 rounded-full bg-couture-champagne text-couture-navy text-xs font-extrabold uppercase">Step 3</span>
+                    <h3 class="font-serif text-2xl font-bold text-white">Exchange Within 45 Days</h3>
+                    <p class="text-sm text-couture-ivory/80 leading-relaxed">
+                        If any sets remain unsold within 45 days (with original tags intact), message us on WhatsApp and swap them for brand-new designs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20I%20would%20like%20to%20know%20more%20about%20your%20wholesale%20orders%20and%2045-day%20exchange%20policy."
+                   target="_blank"
+                   class="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-gradient-to-r from-couture-gold to-couture-champagne text-couture-navy font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:opacity-95 transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Ask Us About Wholesale &amp; Exchange on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SIMPLE CATALOG REQUEST & ENQUIRY FORM (3 FIELDS ONLY) -->
+    <section id="enquiry" class="py-20 warm-canvas">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-10 border border-couture-gold/50 shadow-2xl">
+                
+                <div class="text-center space-y-2 mb-8">
+                    <span class="text-xs uppercase tracking-[0.2em] text-couture-goldDark font-bold">Wholesale Catalog &amp; Price List</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-couture-navy">Request Wholesale Catalog</h2>
+                    <p class="text-sm text-couture-muted">
+                        Fill in these 3 quick details to receive our latest designs and wholesale price list on WhatsApp.
+                    </p>
+                </div>
+
+                <!-- SUCCESS MODAL STATE -->
+                <div x-show="enquirySubmitted" x-cloak x-transition class="bg-couture-ivory border border-couture-gold rounded-2xl p-7 text-center space-y-5">
+                    <div class="w-14 h-14 rounded-full bg-couture-navy text-couture-champagne flex items-center justify-center mx-auto shadow-md">
+                        <i data-lucide="check" class="w-7 h-7"></i>
+                    </div>
+                    <div class="space-y-1.5">
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-couture-navy">Thank You, <span x-text="fullName"></span>!</h3>
+                        <p class="text-sm text-couture-muted leading-relaxed">
+                            We have noted your enquiry for <strong class="text-couture-navy" x-text="businessName"></strong> (<strong class="text-couture-navy" x-text="phoneNumber"></strong>). Tap the button below to send these details directly to our WhatsApp Wholesale Desk and get the PDF catalog right away.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-3 pt-1">
+                        <a :href="'https://wa.me/919347228061?text=' + encodeURIComponent('Hello Trinetra Attires! My name is ' + fullName + ' from ' + businessName + ' (' + phoneNumber + '). Please send me your latest Wholesale Catalog and Price List.')"
+                           target="_blank"
+                           class="w-full py-4 px-5 rounded-full bg-[#1C7C47] hover:bg-[#156338] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>Send Details &amp; Get Catalog on WhatsApp</span>
+                        </a>
+                        <a href="tel:+919347228061"
+                           class="w-full py-3.5 px-5 rounded-full bg-white border border-couture-navy text-couture-navy font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-couture-alabaster transition-all">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>Or Call Us Now: +91 93472 28061</span>
+                        </a>
+                        <button type="button"
+                                @click="enquirySubmitted = false"
+                                class="text-xs text-couture-muted underline hover:text-couture-navy pt-1">
+                            Edit Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3 FIELDS FORM -->
+                <form x-show="!enquirySubmitted"
+                      @submit.prevent="enquirySubmitted = true"
+                      class="space-y-5">
+                    
+                    <!-- Field 1: Full Name -->
+                    <div class="space-y-1.5">
+                        <label for="fullName" class="block text-xs font-bold uppercase tracking-wider text-couture-navy">
+                            Full Name <span class="text-couture-goldDark">*</span>
+                        </label>
+                        <input id="fullName"
+                               type="text"
+                               required
+                               x-model="fullName"
+                               placeholder="Enter your name"
+                               class="w-full bg-couture-ivory border border-couture-gold/50 rounded-xl px-4 py-3.5 text-couture-navy placeholder-couture-muted/60 text-sm focus:outline-none focus:border-couture-navy focus:bg-white transition-all">
+                    </div>
+
+                    <!-- Field 2: Business Name or Boutique Name -->
+                    <div class="space-y-1.5">
+                        <label for="businessName" class="block text-xs font-bold uppercase tracking-wider text-couture-navy">
+                            Business Name or Boutique Name <span class="text-couture-goldDark">*</span>
+                        </label>
+                        <input id="businessName"
+                               type="text"
+                               required
+                               x-model="businessName"
+                               placeholder="Enter your shop or boutique name"
+                               class="w-full bg-couture-ivory border border-couture-gold/50 rounded-xl px-4 py-3.5 text-couture-navy placeholder-couture-muted/60 text-sm focus:outline-none focus:border-couture-navy focus:bg-white transition-all">
+                    </div>
+
+                    <!-- Field 3: Phone Number (WhatsApp / Call) -->
+                    <div class="space-y-1.5">
+                        <label for="phoneNumber" class="block text-xs font-bold uppercase tracking-wider text-couture-navy">
+                            Phone Number (WhatsApp / Call) <span class="text-couture-goldDark">*</span>
+                        </label>
+                        <input id="phoneNumber"
+                               type="tel"
+                               required
+                               x-model="phoneNumber"
+                               placeholder="+91 98765 43210"
+                               class="w-full bg-couture-ivory border border-couture-gold/50 rounded-xl px-4 py-3.5 text-couture-navy placeholder-couture-muted/60 text-sm focus:outline-none focus:border-couture-navy focus:bg-white transition-all">
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit"
+                                class="w-full py-4 rounded-full bg-couture-navy hover:bg-couture-navyLight text-couture-ivory border border-couture-gold/60 font-bold text-sm uppercase tracking-wider shadow-lg transition-all">
+                            Get Wholesale Catalog
+                        </button>
+                    </div>
+
+                    <div class="text-center pt-2 border-t border-couture-sand">
+                        <p class="text-xs text-couture-muted mb-2">Prefer talking directly? Reach us right now:</p>
+                        <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                            <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20please%20share%20your%20wholesale%20catalog." target="_blank" class="text-[#1C7C47] hover:underline inline-flex items-center gap-1">
+                                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp Us
+                            </a>
+                            <span class="text-couture-gold">|</span>
+                            <a href="tel:+919347228061" class="text-couture-navy hover:underline inline-flex items-center gap-1">
+                                <i data-lucide="phone" class="w-3.5 h-3.5"></i> +91 93472 28061
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-couture-navy text-couture-ivory/85 border-t border-couture-gold/45 py-14 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <div class="space-y-4">
+                <div class="bg-couture-ivory rounded-2xl p-3 inline-flex items-center gap-3">
+                    <img x-show="!logoError"
+                         src="WhatsApp_Image_2026-11-13_at_9.24.08_PM-removebg-preview_3.png"
+                         alt="TRINETRA ATTIRES Logo"
+                         class="h-11 w-auto object-contain">
+                    <span class="font-serif text-base font-bold tracking-[0.14em] text-couture-navy pr-1">
+                        TRINETRA ATTIRES
+                    </span>
+                </div>
+                <p class="text-sm font-semibold text-white">
+                    Trinetra Attires — Direct Apparel Manufacturers | B2B Wholesale Only | 45-Day Exchange Policy
+                </p>
+                <p class="text-xs text-couture-ivory/70 leading-relaxed">
+                    Supplying ready-to-sell boutique and showroom collections across India. Strictly wholesale orders—no retail sales.
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <p class="font-serif text-xl text-white font-bold">Quick Links</p>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#why-us" class="hover:text-couture-champagne transition-colors">Why Shops &amp; Boutiques Choose Us</a></li>
+                    <li><a href="#collections" class="hover:text-couture-champagne transition-colors">Our Wholesale Collections</a></li>
+                    <li><a href="#exchange-policy" class="hover:text-couture-champagne transition-colors">45-Day Easy Exchange Policy</a></li>
+                    <li><a href="#enquiry" class="hover:text-couture-champagne transition-colors">Request Wholesale Catalog</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <p class="font-serif text-xl text-white font-bold">Wholesale Desk</p>
+                <ul class="space-y-2.5 text-xs">
+                    <li>
+                        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20I%20would%20like%20to%20request%20your%20wholesale%20catalog." target="_blank" class="inline-flex items-center gap-2 text-couture-champagne font-bold hover:underline">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>WhatsApp Catalog: +91 93472 28061</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+919347228061" class="inline-flex items-center gap-2 text-white font-semibold hover:underline">
+                            <i data-lucide="phone" class="w-4 h-4 text-couture-champagne"></i>
+                            <span>Call Wholesale Desk: +91 93472 28061</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-2 text-couture-ivory/75">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-couture-champagne shrink-0"></i>
+                        <span>Hyderabad, Telangana, India</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-couture-gold/25 mt-10 pt-6 text-center text-xs text-couture-ivory/65">
+            &copy; 2026 Trinetra Attires &mdash; Direct Apparel Manufacturers | B2B Wholesale Only | 45-Day Exchange Policy
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE BOTTOM ACTION BAR -->
+    <div class="fixed bottom-0 inset-x-0 z-50 sm:hidden bg-couture-navy border-t border-couture-gold/50 p-2.5 grid grid-cols-2 gap-2.5 shadow-2xl">
+        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20please%20send%20me%20your%20wholesale%20catalog."
+           target="_blank"
+           class="py-3 rounded-xl bg-[#1C7C47] text-white font-bold text-xs flex items-center justify-center gap-1.5">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp Catalog</span>
+        </a>
+        <a href="tel:+919347228061"
+           class="py-3 rounded-xl bg-couture-ivory text-couture-navy font-bold text-xs flex items-center justify-center gap-1.5">
+            <i data-lucide="phone" class="w-4 h-4 text-couture-goldDark"></i>
+            <span>Call Now</span>
+        </a>
+    </div>
+
+    <!-- FLOATING DESKTOP WHATSAPP & CALL -->
+    <div class="hidden sm:flex fixed bottom-6 right-6 z-50 flex-col gap-2.5 items-end">
+        <a href="tel:+919347228061"
+           class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white text-couture-navy border border-couture-gold shadow-xl hover:bg-couture-alabaster transition-all text-xs font-bold">
+            <i data-lucide="phone" class="w-4 h-4 text-couture-goldDark"></i>
+            <span>Call: +91 93472 28061</span>
+        </a>
+        <a href="https://wa.me/919347228061?text=Hello%20Trinetra%20Attires%2C%20I%20would%20like%20to%20see%20your%20wholesale%20catalog."
+           target="_blank"
+           class="flex items-center gap-2.5 px-5 py-3 rounded-full bg-[#1C7C47] hover:bg-[#156338] text-white shadow-2xl transition-all text-xs font-bold">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp For Catalog</span>
+        </a>
+    </div>
+
+</body>
+</html>
